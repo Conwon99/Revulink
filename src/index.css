@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Display:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark mode theme by default */
+    --background: 240 20% 12%;
+    --foreground: 240 20% 95%;
+
+    --card: 240 20% 14%;
+    --card-foreground: 240 20% 95%;
+
+    --popover: 240 20% 14%;
+    --popover-foreground: 240 20% 95%;
+
+    --primary: 220 85% 60%;
+    --primary-foreground: 240 20% 8%;
+    --primary-glow: 220 85% 70%;
+
+    --secondary: 142 100% 30%;
+    --secondary-foreground: 240 20% 8%;
+
+    --muted: 240 20% 15%;
+    --muted-foreground: 240 15% 60%;
+
+    --accent: 240 20% 15%;
+    --accent-foreground: 220 85% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 240 20% 95%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 15%;
+    --ring: 220 85% 60%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(220 85% 60%), hsl(220 85% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 20% 15%), hsl(220 30% 15%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 60%) 0%, hsl(220 85% 50%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(220 85% 60% / 0.2);
+    --shadow-glow: 0 0 40px hsl(220 85% 70% / 0.4);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.2);
+
+    --star-active: 45 100% 60%;
+    --star-inactive: 240 15% 25%;
+    --star-hover: 45 100% 70%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Light mode theme (optional) */
+    --background: 240 30% 98%;
+    --foreground: 240 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 15%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 76% 46%;
+
+    --secondary: 142 100% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 20% 96%;
+    --muted-foreground: 240 15% 45%;
+
+    --accent: 142 90% 95%;
+    --accent-foreground: 142 100% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 20% 88%;
+    --input: 240 20% 94%;
+    --ring: 142 76% 36%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 100% 20%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 90% 95%), hsl(142 30% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 100% 20%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(142 76% 36% / 0.15);
+    --shadow-glow: 0 0 40px hsl(142 76% 46% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(240 20% 15% / 0.08);
+
+    --star-active: 45 100% 55%;
+    --star-inactive: 240 15% 85%;
+    --star-hover: 45 100% 65%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter font-bold;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-bold;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--primary-glow) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px hsl(var(--primary-glow) / 0.5);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(180deg);
+    }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  
+  /* Custom scrollbar styling for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+  
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--muted));
+  }
+}
